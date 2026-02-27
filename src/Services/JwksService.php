@@ -17,7 +17,7 @@ class JwksService
 
     public function __construct()
     {
-        $this->mercuryBaseUrl = config('auth-guard.mercury_base_url', env('MERCURY_BASE_URL', 'http://localhost:4000'));
+        $this->mercuryBaseUrl = config('auth-guard.mercury.base_url', env('MERCURY_BASE_URL', 'http://localhost:4000'));
         $this->sharedSecret = config('auth-guard.signature_shared_secret', env('SIGNATURE_SHARED_SECRET', ''));
         $this->jwksCacheTTL = config('auth-guard.cache.jwks_ttl', 18000);
     }
