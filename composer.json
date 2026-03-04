@@ -20,7 +20,7 @@
         "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
         "illuminate/http": "^9.0|^10.0|^11.0|^12.0",
         "illuminate/cache": "^9.0|^10.0|^11.0|^12.0",
-        "firebase/php-jwt": "^6.0",
+        "firebase/php-jwt": "^7.0",
         "guzzlehttp/guzzle": "^7.0",
         "phpseclib/phpseclib": "^3.0",
         "predis/predis": "^2.0"
