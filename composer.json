@@ -1,26 +1,21 @@
 {
-    "name": "wazobia/laravel-auth-guard",
+    "name": "wazobiatech/laravel-auth-guard",
     "description": "JWT and Project authentication middleware for Laravel with JWKS support",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "jwt", "authentication", "middleware", "jwks", "guard"],
-    "homepage": "https://github.com/wazobiatech/laravel-jwt-auth",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Wazobia Developer",
             "email": "developer@wazobia.tech"
         }
     ],
-    "support": {
-        "issues": "https://github.com/wazobiatech/laravel-jwt-auth/issues",
-        "source": "https://github.com/wazobiatech/laravel-jwt-auth"
-    },
     "require": {
         "php": "^8.0",
         "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
         "illuminate/http": "^9.0|^10.0|^11.0|^12.0",
         "illuminate/cache": "^9.0|^10.0|^11.0|^12.0",
-        "firebase/php-jwt": "^7.0",
+        "firebase/php-jwt": "^6.0",
         "guzzlehttp/guzzle": "^7.0",
         "phpseclib/phpseclib": "^3.0",
         "predis/predis": "^2.0"
