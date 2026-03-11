@@ -23,6 +23,25 @@ return [
     'signature_shared_secret' => env('SIGNATURE_SHARED_SECRET', ''),
     'signature_algorithm' => env('SIGNATURE_ALGORITHM', 'sha256'),
     'mercury_timeout' => env('MERCURY_TIMEOUT', 10),
+    'mercury_connect_timeout' => env('MERCURY_CONNECT_TIMEOUT', 5),
+    'mercury_retry_attempts' => env('MERCURY_RETRY_ATTEMPTS', 3),
+    'mercury_retry_delay' => env('MERCURY_RETRY_DELAY', 1000), // milliseconds
+    'mercury_pool_size' => env('MERCURY_POOL_SIZE', 50),
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Circuit Breaker Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for circuit breaker pattern to prevent cascading failures
+    | during high load or Mercury service issues.
+    |
+    */
+    'circuit_breaker' => [
+        'failure_threshold' => env('MERCURY_CIRCUIT_BREAKER_THRESHOLD', 5),
+        'reset_timeout' => env('MERCURY_CIRCUIT_BREAKER_RESET', 60),
+        'half_open_max_calls' => env('MERCURY_CIRCUIT_BREAKER_HALF_OPEN', 3),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -77,6 +96,8 @@ return [
         'prefix' => env('AUTH_CACHE_PREFIX', 'auth_guard'),
         'driver' => env('AUTH_CACHE_DRIVER', 'redis'),
         'jwks_ttl' => 18000, // 5 hours for JWKS cache
+        'service_token_ttl' => env('SERVICE_TOKEN_CACHE_TTL', 3300), // 55 minutes
+        'service_uuid_ttl' => env('SERVICE_UUID_CACHE_TTL', 86400), // 24 hours
     ],
 
     /*

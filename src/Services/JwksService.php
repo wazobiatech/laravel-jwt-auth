@@ -138,6 +138,8 @@ class JwksService
 
             Log::info("Fetching JWKS from {$jwksUri}");
 
+            $timeout = config('auth-guard.mercury_timeout', 10);
+            
             // Use curl instead of Http facade to avoid dependency issues
             $context = stream_context_create([
                 'http' => [
@@ -148,7 +150,8 @@ class JwksService
                         "X-Timestamp: {$timestamp}",
                         "X-Signature: {$signature}"
                     ],
-                    'timeout' => 10
+                    'timeout' => $timeout,
+                    'ignore_errors' => true
                 ]
             ]);
 
